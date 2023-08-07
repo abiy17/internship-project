@@ -1,0 +1,104 @@
+body{
+  /*  background-color: rgb(127, 233, 191);  */
+    /*height: 1500px;*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.header img{
+    border: none;
+    border-radius: 5px;
+}
+ul.horizontal, .col-3 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #9bba1f;
+    font-size: 1.3em;
+    color: white;
+}
+.col-3 ul{
+    padding-left: 15px;
+}
+ul.horizontal li{
+    float: left;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+ul li a{
+    text-decoration: none;
+}
+.row::after{
+    content: "";
+    display:table;
+    clear: both;
+    margin: auto;
+} 
+.menu li{
+    padding: 6px;
+    margin-bottom: 7px;
+    background-color: chartreuse;
+    color: rgb(29, 29, 230);
+    box-shadow: 0 2px 4px black;
+}
+.menu li:hover{
+    background-color: rgb(225, 75, 105);
+}
+/*
+.aside{
+   background-color: aqua;
+    padding:  15px;
+    color:rgb(225, 75, 105)
+    font-size: 15px;
+    box-shadow: 0 1px 3px blue;
+   /* width: 1500px;
+    text-align: center;
+}
+ 
+.footer{
+    background-color: blue;
+    color: aliceblue;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}  */
+
+[class*="col-"]{
+   width: 100%;
+ }
+
+ @media only screen and (min-width: 600px) {
+    .col-s-1{width: 8.33%;}
+    .col-s-2{width: 16.66%;}
+    .col-s-3{width: 25%;}
+    .col-s-4{width: 33.33%;}
+    .col-s-5{width: 41.66%;}
+    .col-s-6{width: 50%;}
+    .col-s-7{width: 58.33%;}
+    .col-s-8{width: 66.66%;}
+    .col-s-9{width: 75%;}
+    .col-s-10{width: 83.33%;}
+    .col-s-11{width: 91.66%;}
+    .col-s-12{width: 100%;}
+ }
+
+ @media  only screen and (min-width: 768px) {
+    .col-1{width: 8.33%;}
+    .col-2{width: 16.66%;}
+    .col-3{width: 25%;}
+    .col-4{width: 33.33%;}
+    .col-5{width: 41.66%;}
+    .col-6{width: 50%;}
+    .col-7{width: 58.33%;}
+    .col-8{width: 66.66%;}
+    .col-9{width: 75%;}
+    .col-10{width: 83.33%;}
+    .col-11{width: 91.66%;}
+    .col-12{width: 100%;} 
+ }  
+ [class*="col-"]{
+   float: left;
+   padding: 5px;
+  }
