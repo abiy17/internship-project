@@ -2,10 +2,14 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion"
 import { useContext } from "preact/hooks";
 import MyContext from "../context";
+import mintImage from "../assets/mint.png"
 function Homepage() {
     const {mode,setmode} = useContext(MyContext)
     return ( 
         <motion.div  id={mode ? "homePage" : "homePage-light"} className="flex items-center justify-center min-h-[42.46em">
+            <div className="flex absolute top-5 left-10">
+                <img className="w-24 rounded-lg" src={mintImage} alt="" />
+            </div>
             <div  className="">
             <h1 className={mode ? "text-[2.5em] DI  md:text-[5.4em] text-white pb-2" : "text-[2.5em] DI  md:text-[5.4em] text-slate-800 pb-2"}>ወዴት መሄድ ይፈልጋሉ ?</h1>
             <p className={mode ? "text-gray-300 text-2xl text-center pb-6" : "text-slate-800 text-2xl text-center pb-6"}>Where Do You want to Go?</p>

@@ -21,7 +21,7 @@
     overflow-y: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.384),rgb(243, 243, 243)),url("./assets/download.png");
+    background-image: linear-gradient(rgba(255, 254, 255, 0.89),rgba(243, 243, 243, 0.897)),url("./assets/download.png");
 }
 .departementDark{
     background-color: rgb(0, 0, 10);
