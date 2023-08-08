@@ -14,4 +14,6 @@ app.post(`/department`,mongo.createDepartment)
 
 app.put(`/department/:id`,mongo.updateDepartment)
 
+app.delete(`/department/:id`,mongo.deleteDepatment)
+
 app.listen(5000);

@@ -11,8 +11,8 @@ function Homepage() {
             <p className={mode ? "text-gray-300 text-2xl text-center pb-6" : "text-slate-800 text-2xl text-center pb-6"}>Where Do You want to Go?</p>
             <div  className="flex flex-col justify-center items-center relative left-16 w-[10em] m-auto">
                 <motion.div initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:0}} className="sm:flex gap-[3em] pt-4 relative left-[-3em] pb-24">
-                    <NavLink to="personal"><button className={mode ? "button" : "button-light"}><span>ስራ አስኪያጅ  Officials</span></button></NavLink>
-                    <NavLink to="department"><button className={mode ? "button" : "button-light"}> <span>የስራ ክፍል  Department</span></button></NavLink>
+                    <NavLink to="personal"><button className={mode ? "button" : "button-light"}><span className="flex flex-col">የስራ ሐላፊዎች  Officials</span></button></NavLink>
+                    <NavLink to="department"><button className={mode ? "button" : "button-light"}> <span>የስራ ክፍሎች  Departments</span></button></NavLink>
                 </motion.div>
             </div>
         </div>

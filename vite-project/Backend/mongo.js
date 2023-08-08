@@ -27,7 +27,13 @@ const getDepartment = async (req,res,next)=>{
 }
 
 const deleteDepatment= async (req,res,next )=>{
-    
+    const id = req.params.id;
+    try{
+        departments = await departmentModel.findByIdAndDelete(id)
+    }catch(err){
+        console.log(err)
+        res.status(404).json({message: "something went wrong"})
+    }
 }
 
 const updateDepartment = async (req,res,next)=>{
