@@ -12,6 +12,6 @@ app.get(`/department`,mongo.getDepartment)
 
 app.post(`/department`,mongo.createDepartment)
 
-app.get(`/updateDepartment/:id`,mongo.updateDepartment)
+app.put(`/department/:id`,mongo.updateDepartment)
 
 app.listen(5000);

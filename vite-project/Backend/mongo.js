@@ -34,11 +34,12 @@ const updateDepartment = async (req,res,next)=>{
     const id = req.params.id;
     const { department,description,direction } = req.body
     try{
-        departments = await departmentModel.findById(id)
-        departments.department = department
-        departments.description = description
-        departments.direction = direction
-        departments.save();
+        departments = await departmentModel.findByIdAndUpdate(id,req.body,{new: true}).then((departments)=>{
+            if(!departments){
+                return res.status(404).send();
+            }
+            res.json(departments)
+        })
     }catch(err){
         res.json({message: "error occured!"})
     }
