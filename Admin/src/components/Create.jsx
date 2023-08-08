@@ -2,11 +2,17 @@ import { useContext } from "preact/hooks";
 import MyContext from "../context";
 import axios from "axios"
 function Create() {
-    const { departments,setdepartments,id,setid,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId } = useContext(MyContext)
+    const { departments,setdepartments,id,setid,validForm,setValidForm,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId } = useContext(MyContext)
     const HandleSubmit=(e)=>{
         if( id > departments.length ){
           setvalidId(true)
         }
+        if( id > departments.length && department !== "" && description !== "" && direction !== ""){
+            setValidForm(true)
+        }
+        setTimeout(() => {
+            setValidForm(false)
+        }, 3000);
         e.preventDefault();
         axios.post(`http://localhost:5000/department`,{id,department,description,direction})
         .then(res => console.log(res))
@@ -18,12 +24,13 @@ function Create() {
       }
     return (
         <div className="w-[50%] m-auto bg-gray-50 text-xl pl-10">
-            <form onSubmit={HandleSubmit} className="flex flex-col gap-10" action='http://localhost:5000/department'>
+            <form onSubmit={HandleSubmit} className="flex flex-col gap-10" >
                 <h1 className="text-center text-2xl">Create department</h1>
                 <div className="flex flex-col gap-3">
+                    <h1 className={validForm ? "text-green-600 font-semibold text-lg text-center" : "hidden"}>Operation was successfull !</h1>
                     <div className="flex gap-[5em]">
                         <span>Id</span>
-                        <input type="number" className="text-sm w-[10%] p-3 outline-none rounded-lg border-solid border-gray-300 border-[1px]" required onChange={(e)=>setid(e.target.value)}  />
+                        <input type="number" className="text-sm w-[10%] h-5 p-3 outline-none rounded border-solid border-gray-300 border-[1px]" required onChange={(e)=>setid(e.target.value)}  />
                     </div>
                     { id > departments.length ? null : <p className="text-red-600 text-sm">warning:- Id must be greater than {departments.length}!</p>}
                 </div>
