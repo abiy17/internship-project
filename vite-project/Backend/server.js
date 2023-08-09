@@ -16,4 +16,8 @@ app.put(`/department/:id`,mongo.updateDepartment)
 
 app.delete(`/department/:id`,mongo.deleteDepatment)
 
+app.get(`/ratings` ,mongo.getRating)
+
+app.post(`/rating`, mongo.createRating)
+
 app.listen(5000);

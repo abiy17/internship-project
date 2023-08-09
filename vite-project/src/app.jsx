@@ -12,6 +12,7 @@ export function App() {
   const [ OtherDepartments,setOtherDepartments ] = useState([])
   const [mode,setmode] = useState(false)
   const [loading,setloading] = useState(true)
+  const [RatingCpt,setRatingCpt] = useState(false)
   useEffect(()=>{
     axios.get("http://localhost:5000/department")
     .then(res => {
@@ -21,7 +22,7 @@ export function App() {
   },[])
   return (
     <>
-    <MyContext.Provider value={{mode,setmode,loading,setloading,Departement,setDepartment,selectedDepartment,setselectedDepartment,OtherDepartments,setOtherDepartments}}>
+    <MyContext.Provider value={{mode,setmode,RatingCpt,setRatingCpt,loading,setloading,Departement,setDepartment,selectedDepartment,setselectedDepartment,OtherDepartments,setOtherDepartments}}>
       <BrowserRouter>
         <AnimatedRoutes />
       </BrowserRouter>

@@ -2,6 +2,7 @@ import { useContext, useState } from "preact/hooks";
 import MyContext from "../context";
 import DepartmentCont from "./DepartmentCont";
 import SkeletonMain from "./SkeletonMain";
+import Rating from "./Rating";
 
 function DepartmentMainCont() {
     const [value,setvalue] = useState("")

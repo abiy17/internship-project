@@ -6,6 +6,7 @@ function Nav() {
             <h1>Welcome Admin</h1>
             <ul className="flex gap-8 items-center">
                 <NavLink to="edit"><li>Edit</li></NavLink>
+                <NavLink to="ratings">Ratings</NavLink>
             </ul>
         </div>
      );

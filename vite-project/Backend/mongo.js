@@ -2,7 +2,7 @@ const MongoClient = require(`mongodb`).MongoClient;
 const mongoose = require(`mongoose`)
 const url = "mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/store?retryWrites=true&w=majority"
 const departmentModel = require("./mongoose schema/department-schema")
-
+const ratingModel = require("./mongoose schema/ratingSchema")
 mongoose.connect('mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/');
 let departments;
 const createDepartment = async (req,res,next)=>{
@@ -51,8 +51,29 @@ const updateDepartment = async (req,res,next)=>{
     }
 
 }
+let ratings
+const getRating = async(req,res,next)=>{
+    try{
+        ratings = await ratingModel.find()
+        res.status(200).json(ratings)
+    }
+    catch(err){
+        res.json({message: "coudn't get department"})
+    }
+}
 
+const createRating = async (req,res,next)=>{
+    const { Rating,feedback } = req.body
+    try{
+        ratings = await ratingModel.create({ Rating,feedback })
+    }catch(err){
+        res.json({message: "something went wrong"})
+    }
+}
+
+exports.getRating = getRating;
 exports.getDepartment = getDepartment;
 exports.createDepartment = createDepartment;
 exports.deleteDepatment = deleteDepatment;
 exports.updateDepartment = updateDepartment;
+exports.createRating = createRating;

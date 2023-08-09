@@ -4,12 +4,15 @@ import { useContext, useState } from "preact/hooks";
 import MyContext from "../context";
 import { NavLink } from "react-router-dom";
 function DepartmentCont(props) {
-    const { Departement,mode,setmode,setDepartment,selectedDepartment,setselectedDepartment,OtherDepartments,setOtherDepartments } = useContext(MyContext)
+    const { Departement,mode,RatingCpt,setRatingCpt,setmode,setDepartment,selectedDepartment,setselectedDepartment,OtherDepartments,setOtherDepartments } = useContext(MyContext)
     const HandleDirection =(Id)=>{
         const FilteredDepartment = Departement.find(item => item.id === Id)
         const OtherDepartments = Departement.filter(item => item.id !== Id)
         setselectedDepartment(FilteredDepartment)
         setOtherDepartments(OtherDepartments)
+        setTimeout(() => {
+            setRatingCpt(true)
+        }, 10000);
     }
     return (
         <div className={mode ? "departmentCont p-1 duration-300 w-5/6 m-auto rounded-xl text-center items-center min-h-[10em] max-h-[15em]" : "departmentCont-light p-1 duration-300 w-5/6 m-auto rounded-xl text-center items-center min-h-[10em] max-h-[15em]"}>
