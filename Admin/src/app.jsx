@@ -6,6 +6,8 @@ import CreatePage from './pages/CreatePage';
 import EditPage from './pages/EditPage';
 import UpdatePage from './pages/UpdatePage';
 import Ratings from './pages/Ratings';
+import Home from './pages/Home';
+import CreateMin from './pages/createMin';
 export function App() {
   const [departments,setdepartments] = useState([])
   const [id,setid] = useState(0)
@@ -35,10 +37,12 @@ export function App() {
      <MyContext.Provider value={{uniqueId,setuniqueid,ratingData,setratingData,departments,setdepartments,id,setid,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId,validForm,setValidForm}}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<CreatePage />}/>
-            <Route path='/edit' element={<EditPage />}/>
+            <Route path='/' element={<Home />}/>
+            <Route path='/departments' element={<CreatePage />}/>
+            <Route path='/departments/edit' element={<EditPage />}/>
             <Route path='/ratings' element={<Ratings />}/>
-            <Route path='/edit/update' element={<UpdatePage />}/>
+            <Route path='/departments/edit/update' element={<UpdatePage />}/>
+            <Route path='/minister' element={<CreateMin />}/>
           </Routes>
         </BrowserRouter>
      </MyContext.Provider>

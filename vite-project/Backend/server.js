@@ -20,8 +20,8 @@ app.get(`/ratings` ,mongo.getRating)
 
 app.post(`/rating`, mongo.createRating)
 
-app.get(`./minister`,mongo.getMinister)
+app.get(`/minister`,mongo.getMinister)
 
-app.post(`./minister`,mongo.createMinister)
+app.post(`/minister`,mongo.createMinister)
 
 app.listen(5000);
