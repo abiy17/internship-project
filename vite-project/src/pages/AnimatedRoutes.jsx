@@ -4,6 +4,7 @@ import PersonalPage from './PersonalPage'
 import Department from './Department'
 import DetailDepartment from "./DetailDepartment"
 import { AnimatePresence } from 'framer-motion';
+import Minister from './Minister';
 function AnimatedRoutes() {
     const location = useLocation()
     return (
@@ -13,6 +14,7 @@ function AnimatedRoutes() {
             <Route path='personal' element={<PersonalPage />}/>
             <Route path='department' element={<Department />}/>
             <Route path='department/Directions' element={<DetailDepartment />}/>
+            <Route path='minister' element={<Minister />}/>
         </Routes>
     </AnimatePresence>
       );
