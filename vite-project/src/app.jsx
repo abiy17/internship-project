@@ -13,11 +13,17 @@ export function App() {
   const [mode,setmode] = useState(false)
   const [loading,setloading] = useState(true)
   const [RatingCpt,setRatingCpt] = useState(false)
+  const [MinisterData,setMinisterData] = useState([])
   useEffect(()=>{
     axios.get("http://localhost:5000/department")
     .then(res => {
       setDepartment(res.data)
       setloading(false)
+    })
+    axios.get("http://localhost:5000/minister")
+    .then(data => {
+      
+      console.log(data)
     })
   },[])
   return (

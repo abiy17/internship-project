@@ -19,6 +19,10 @@ export function App() {
   const [ validForm,setValidForm ] = useState(false)
   const [uniqueId,setuniqueid] = useState("")
   const [ratingData,setratingData] = useState([])
+  const [minister,setminister] = useState("")
+  const [detail,setdetail] = useState("")
+  const [Mindirection,setMindirection] = useState("")
+  const [MinImage,setMinImage] = useState("")
   useEffect(()=>{
     fetch(`http://localhost:5000/department`)
     .then(res => res.json())
@@ -34,7 +38,15 @@ export function App() {
   },[])
   return (
     <>
-     <MyContext.Provider value={{uniqueId,setuniqueid,ratingData,setratingData,departments,setdepartments,id,setid,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId,validForm,setValidForm}}>
+     <MyContext.Provider value={
+      {uniqueId,setuniqueid,minister,setminister,detail
+        ,setdetail,Mindirection,setMindirection
+        ,MinImage,setMinImage,ratingData,setratingData,
+        departments,setdepartments,id,setid,
+        disableBtn,setdisableBtn,department,
+        setdepartment,description,setdescription,
+        direction,setdirection,validId,setvalidId
+      ,validForm,setValidForm}}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />}/>

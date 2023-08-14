@@ -1,6 +1,7 @@
 const MongoClient = require(`mongodb`).MongoClient;
 const mongoose = require(`mongoose`)
-const url = "mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/store?retryWrites=true&w=majority"
+const multer = require(`multer`)
+
 const departmentModel = require("./mongoose schema/department-schema")
 const ratingModel = require("./mongoose schema/ratingSchema")
 const MinisterModel = require(`./mongoose schema/ministerSchema`)
@@ -74,9 +75,9 @@ const createRating = async (req,res,next)=>{
 
 let ministers
 const createMinister = async (req,res,next)=>{
-    const { minister,detail, direction } = req.body
+    const { MinImage,minister,detail, Mindirection } = req.body
     try{
-        ministers = await MinisterModel.create({ minister,detail,direction })
+        ministers = await MinisterModel.create({ MinImage,minister,detail,Mindirection })
     }
     catch(err){
         res.json({message: err})

@@ -1,8 +1,11 @@
 const express = require(`express`)
+require("dotenv").config();
 const bodyParser = require(`body-parser`)
 const mongo = require(`./mongo`)
 const app = express();
+app.use(bodyParser.json({limit: '50mb'}));
 const cors = require(`cors`)
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 
