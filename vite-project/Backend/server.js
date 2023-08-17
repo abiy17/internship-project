@@ -27,4 +27,8 @@ app.get(`/minister`,mongo.getMinister)
 
 app.post(`/minister`,mongo.createMinister)
 
+app.get(`/officials`,mongo.getOfficials)
+
+app.post(`/officials`,mongo.createOfficials)
+
 app.listen(5000);

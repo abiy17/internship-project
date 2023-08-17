@@ -5,7 +5,7 @@ function Home() {
             <p className="p text-slate-800 text-[5em]">Welcome Admin</p>
             <ul className="flex gap-10">
                 <button className="button"><NavLink clasname to="minister"><span>minsters</span></NavLink></button>
-                <button className="button"><NavLink  to=""><span>Officials</span></NavLink></button>
+                <button className="button"><NavLink  to="Officals"><span>Officials</span></NavLink></button>
                 <button className="button"><NavLink to="departments"><span>Departements</span></NavLink></button>
             </ul>
         </div>

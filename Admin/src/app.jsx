@@ -8,6 +8,8 @@ import UpdatePage from './pages/UpdatePage';
 import Ratings from './pages/Ratings';
 import Home from './pages/Home';
 import CreateMin from './pages/createMin';
+import CreateOfficials from './pages/createOfficals';
+import OffEdit from './pages/OffEdit';
 export function App() {
   const [departments,setdepartments] = useState([])
   const [id,setid] = useState(0)
@@ -21,8 +23,12 @@ export function App() {
   const [ratingData,setratingData] = useState([])
   const [minister,setminister] = useState("")
   const [detail,setdetail] = useState("")
-  const [Mindirection,setMindirection] = useState("")
+  const [Mindirection,setMindirection] = useState()
   const [MinImage,setMinImage] = useState("")
+  const [Officials,setOfficials] = useState("")
+  const [OfficalsDet,setOfficalsDet]= useState("")
+  const [OfficalsDir,setOfficalsDir] = useState("")
+  const [OfficalsData,setOfficalsData] = useState([])
   useEffect(()=>{
     fetch(`http://localhost:5000/department`)
     .then(res => res.json())
@@ -35,11 +41,15 @@ export function App() {
       setratingData(data)
     })
     )
+   
   },[])
+  
   return (
     <>
      <MyContext.Provider value={
-      {uniqueId,setuniqueid,minister,setminister,detail
+      {Officials,setOfficials,OfficalsDet,OfficalsData,setOfficalsData
+        ,setOfficalsDet,OfficalsDir,setOfficalsDir
+        ,uniqueId,setuniqueid,minister,setminister,detail
         ,setdetail,Mindirection,setMindirection
         ,MinImage,setMinImage,ratingData,setratingData,
         departments,setdepartments,id,setid,
@@ -54,6 +64,8 @@ export function App() {
             <Route path='/departments/edit' element={<EditPage />}/>
             <Route path='/ratings' element={<Ratings />}/>
             <Route path='/departments/edit/update' element={<UpdatePage />}/>
+            <Route path='/Officals' element={<CreateOfficials />}/>
+            <Route path='/Officals/edit' element={<OffEdit />}/>
             <Route path='/minister' element={<CreateMin />}/>
           </Routes>
         </BrowserRouter>

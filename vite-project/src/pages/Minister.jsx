@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { FaHome, FaSun, FaMoon} from "react-icons/fa";
 import MinisterData from "../MinisterData";
 import MinisterCont from "../components/MinisterCont";
+import SkeletonMain from "../components/SkeletonMain";
 function Minister() {
     const Navigate = useNavigate();
-    const {mode,setmode} = useContext(MyContext)
+    const {mode,setmode,MinisterData,setMinisterData,loading,setloading} = useContext(MyContext)
     return (
         <div className="minister">
             <div  className={mode ? "DepartmentNav sticky top-3 flex mt-3 h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : "DepartmentNav-light mt-3 p-9 shadow-md text-slate-800  text-2xl bg-white sticky top-3 flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
@@ -20,7 +21,7 @@ function Minister() {
             </div>
             </div>
             <div className="w-11/12 mt-4 m-auto grid grid-cols-2 gap-5 bg-white min-h-[38em]">
-                {MinisterData.map((item)=>{
+                {loading ? <SkeletonMain /> : MinisterData.map((item)=>{
                     return <MinisterCont 
                         {...item}
                     />

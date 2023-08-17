@@ -5,6 +5,7 @@ const multer = require(`multer`)
 const departmentModel = require("./mongoose schema/department-schema")
 const ratingModel = require("./mongoose schema/ratingSchema")
 const MinisterModel = require(`./mongoose schema/ministerSchema`)
+const OfficalsModel = require(`./mongoose schema/officalsSchema`)
 mongoose.connect('mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/');
 let departments;
 const createDepartment = async (req,res,next)=>{
@@ -78,6 +79,7 @@ const createMinister = async (req,res,next)=>{
     const { MinImage,minister,detail, Mindirection } = req.body
     try{
         ministers = await MinisterModel.create({ MinImage,minister,detail,Mindirection })
+        res.send("sucesses")
     }
     catch(err){
         res.json({message: err})
@@ -93,7 +95,28 @@ const getMinister = async (req,res,next)=>{
         res.status(404).json({message: "something went wrong!"})
     }
 }
+let officials;
+const getOfficials = async (req,res,next)=>{
+    try{
+        officials = await OfficalsModel.find();
+        res.json(officials)
+    }
+    catch(err){
+        res.status(404).json({mssge: "coudn't get officials"})
+    }
+}
 
+
+const createOfficials = async (req,res,next)=>{
+    const { Officials,OfficalsDet,OfficalsDir } = req.body
+    try{
+        officials = await OfficalsModel.create({ Officials,OfficalsDet,OfficalsDir })
+        res.status(200).json(officials)
+    }
+    catch(err){
+        res.json({message: "coudn't create officials"})
+    }
+}
 exports.getRating = getRating;
 exports.getDepartment = getDepartment;
 exports.createDepartment = createDepartment;
@@ -102,3 +125,5 @@ exports.updateDepartment = updateDepartment;
 exports.createRating = createRating;
 exports.createMinister = createMinister;
 exports.getMinister = getMinister;
+exports.createOfficials = createOfficials;
+exports.getOfficials = getOfficials;
