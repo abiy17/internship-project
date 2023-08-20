@@ -1,2 +1,2 @@
 ﻿# internship-project
-# my first MERN-project
+#MERN-project
