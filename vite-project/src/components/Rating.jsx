@@ -20,7 +20,7 @@ function Rating() {
         <div className={mode ? "flex flex-col gap-10 p-5 w-4/6 items-center bg-gray-950 rounded-xl min-h-[2oem] m-auto" : "flex flex-col gap-10 p-5 w-4/6 items-center bg-stone-50 rounded-xl min-h-[2oem] m-auto"}>
             <div className="flex pt-4">
                 <p className="text-slate-700 font-bold">How did we do?</p>
-                <FaWindowClose onClick={()=>setRatingCpt(false)} className={mode ? "relative left-56 cursor-pointer text-white" : "relative left-56 cursor-pointer"}/>
+                <FaWindowClose onClick={setRatingCpt(false)} className={mode ? "relative left-56 cursor-pointer text-white" : "relative left-56 cursor-pointer"}/>
             </div>
             <p className="text-[1em] w-[30em] text-center text-slate-500">Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!</p>

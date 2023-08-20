@@ -1,9 +1,16 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext } from "preact/hooks";
+import { useContext,useEffect } from "preact/hooks";
 import MyContext from "../context";
 function Ratings() {
     const Navigate = useNavigate()
     const { ratingData,setratingData } = useContext(MyContext)
+    useEffect(()=>{
+        fetch(`http://localhost:5000/ratings`)
+        .then(res => res.json())
+        .then(data => {
+          setratingData(data)
+        })
+      },[])
     return (
         <div className="ratings flex flex-col gap-5">
             <div className="w-11/12 bg-white min-h-[4em] text-xl font-bold flex justify-around items-center m-auto">

@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import CreateMin from './pages/createMin';
 import CreateOfficials from './pages/createOfficals';
 import OffEdit from './pages/OffEdit';
+import Comments from './pages/Comments';
 export function App() {
   const [departments,setdepartments] = useState([])
   const [id,setid] = useState(0)
@@ -20,6 +21,7 @@ export function App() {
   const [validId,setvalidId] = useState(false)
   const [ validForm,setValidForm ] = useState(false)
   const [uniqueId,setuniqueid] = useState("")
+  const [OffId,setOffId] = useState("")
   const [ratingData,setratingData] = useState([])
   const [minister,setminister] = useState("")
   const [detail,setdetail] = useState("")
@@ -29,25 +31,27 @@ export function App() {
   const [OfficalsDet,setOfficalsDet]= useState("")
   const [OfficalsDir,setOfficalsDir] = useState("")
   const [OfficalsData,setOfficalsData] = useState([])
+  const [CommentsData,SetCommentsData] = useState([])
   useEffect(()=>{
     fetch(`http://localhost:5000/department`)
     .then(res => res.json())
     .then(data =>{
       setdepartments(data)
-    },
-    fetch(`http://localhost:5000/ratings`)
-    .then(res => res.json())
-    .then(data => {
-      setratingData(data)
+    }),
+    fetch(`http://localhost:5000/officials`)
+        .then(res => res.json())
+        .then(data => {
+          setOfficalsData(data)
+      })
+    fetch("http://localhost:5000/comments").then(res => res.json()).then(data => {
+      SetCommentsData(data)
     })
-    )
-   
   },[])
-  
   return (
     <>
      <MyContext.Provider value={
-      {Officials,setOfficials,OfficalsDet,OfficalsData,setOfficalsData
+      {Officials,setOfficials,OffId,setOffId,CommentsData,SetCommentsData
+        ,OfficalsDet,OfficalsData,setOfficalsData
         ,setOfficalsDet,OfficalsDir,setOfficalsDir
         ,uniqueId,setuniqueid,minister,setminister,detail
         ,setdetail,Mindirection,setMindirection
@@ -62,11 +66,12 @@ export function App() {
             <Route path='/' element={<Home />}/>
             <Route path='/departments' element={<CreatePage />}/>
             <Route path='/departments/edit' element={<EditPage />}/>
-            <Route path='/ratings' element={<Ratings />}/>
+            <Route path='/departments/ratings' element={<Ratings />}/>
             <Route path='/departments/edit/update' element={<UpdatePage />}/>
             <Route path='/Officals' element={<CreateOfficials />}/>
             <Route path='/Officals/edit' element={<OffEdit />}/>
             <Route path='/minister' element={<CreateMin />}/>
+            <Route path='/departments/comments' element={<Comments />}/>
           </Routes>
         </BrowserRouter>
      </MyContext.Provider>

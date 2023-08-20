@@ -5,7 +5,8 @@ const multer = require(`multer`)
 const departmentModel = require("./mongoose schema/department-schema")
 const ratingModel = require("./mongoose schema/ratingSchema")
 const MinisterModel = require(`./mongoose schema/ministerSchema`)
-const OfficalsModel = require(`./mongoose schema/officalsSchema`)
+const OfficalsModel = require(`./mongoose schema/officalsSchema`);
+const CommentModel = require("./mongoose schema/CommentSchema");
 mongoose.connect('mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/');
 let departments;
 const createDepartment = async (req,res,next)=>{
@@ -117,6 +118,40 @@ const createOfficials = async (req,res,next)=>{
         res.json({message: "coudn't create officials"})
     }
 }
+
+const deleteOfficials = async (req,res,next)=>{
+    const id = req.params.id;
+    try{
+        officials = await OfficalsModel.findByIdAndDelete(id)
+        res.status(200)
+    }
+    catch(err){
+        res.json({mssge: "coudn,t Delete the officials"})
+    }
+}
+
+let comments;
+
+const getComments = async (req,res,next)=>{
+    try{
+        comments = await CommentModel.find();
+        res.json(comments)
+    }
+    catch(err){
+        res.json({mssge: "coudn't get comments!"})
+    }
+}
+
+const createComment = async (req,res,next)=>{
+    const { SelectedDep,optionOne,optiontwo,optionThree,optionFour,FeedBack } = req.body;
+    try{
+        comments = await CommentModel.create({ SelectedDep,optionOne,optiontwo,optionThree,optionFour,FeedBack })
+        res.send("sucesses")
+    }
+    catch(err){
+        res.status(404).json({message: "coudn't create comments"})
+    }
+}
 exports.getRating = getRating;
 exports.getDepartment = getDepartment;
 exports.createDepartment = createDepartment;
@@ -127,3 +162,6 @@ exports.createMinister = createMinister;
 exports.getMinister = getMinister;
 exports.createOfficials = createOfficials;
 exports.getOfficials = getOfficials;
+exports.deleteOfficials = deleteOfficials;
+exports.createComment = createComment;
+exports.getComments = getComments;

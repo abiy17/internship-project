@@ -20,6 +20,7 @@ function DepartmentCont(props) {
             <div className="">
                 <NavLink to="Directions"><button onClick={()=>HandleDirection(props.id)} className="w-[8.5em] relative hover:opacity-70 active:opacity-30 hover:duration-300 top-10 m-auto items-center h-[2.6em] flex gap-2 bg-gray-950 text-white rounded-xl p-3"><FaDirections className="text-xl"/>Directions</button></NavLink>
             </div>
+            
         </div>
       );
 }
