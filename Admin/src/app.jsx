@@ -11,6 +11,7 @@ import CreateMin from './pages/createMin';
 import CreateOfficials from './pages/createOfficals';
 import OffEdit from './pages/OffEdit';
 import Comments from './pages/Comments';
+import Dashboard from './pages/DashboardDep';
 export function App() {
   const [departments,setdepartments] = useState([])
   const [id,setid] = useState(0)
@@ -43,9 +44,16 @@ export function App() {
         .then(data => {
           setOfficalsData(data)
       })
-    fetch("http://localhost:5000/comments").then(res => res.json()).then(data => {
+    fetch("http://localhost:5000/comments")
+    .then(res => res.json())
+    .then(data => {
       SetCommentsData(data)
     })
+    fetch(`http://localhost:5000/ratings`)
+        .then(res => res.json())
+        .then(data => {
+          setratingData(data)
+        })
   },[])
   return (
     <>
@@ -64,14 +72,15 @@ export function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path='/departments' element={<CreatePage />}/>
-            <Route path='/departments/edit' element={<EditPage />}/>
-            <Route path='/departments/ratings' element={<Ratings />}/>
-            <Route path='/departments/edit/update' element={<UpdatePage />}/>
+            <Route path='/dashboardDep' element={<Dashboard />}/>
+            <Route path='/dashboardDep/create' element={<CreatePage />}/>
+            <Route path='/dashboardDep/edit' element={<EditPage />}/>
+            <Route path='/dashboardDep/ratings' element={<Ratings />}/>
+            <Route path='/dashboardDep/edit/update' element={<UpdatePage />}/>
             <Route path='/Officals' element={<CreateOfficials />}/>
             <Route path='/Officals/edit' element={<OffEdit />}/>
             <Route path='/minister' element={<CreateMin />}/>
-            <Route path='/departments/comments' element={<Comments />}/>
+            <Route path='/dashboardDep/comments' element={<Comments />}/>
           </Routes>
         </BrowserRouter>
      </MyContext.Provider>

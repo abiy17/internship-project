@@ -5,11 +5,7 @@ function Ratings() {
     const Navigate = useNavigate()
     const { ratingData,setratingData } = useContext(MyContext)
     useEffect(()=>{
-        fetch(`http://localhost:5000/ratings`)
-        .then(res => res.json())
-        .then(data => {
-          setratingData(data)
-        })
+        
       },[])
     return (
         <div className="ratings flex flex-col gap-5">

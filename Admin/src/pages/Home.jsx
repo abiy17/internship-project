@@ -6,7 +6,7 @@ function Home() {
             <ul className="flex gap-10">
                 <button className="button"><NavLink clasname to="minister"><span>Minsters</span></NavLink></button>
                 <button className="button"><NavLink  to="Officals"><span>Officials</span></NavLink></button>
-                <button className="button"><NavLink to="departments"><span>Departements</span></NavLink></button>
+                <button className="button"><NavLink to="dashboardDep"><span>Departements</span></NavLink></button>
             </ul>
         </div>
       );
