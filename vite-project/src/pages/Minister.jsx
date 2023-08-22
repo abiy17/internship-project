@@ -2,7 +2,6 @@ import { useContext, useState } from "preact/hooks";
 import MyContext from "../context";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaSun, FaMoon} from "react-icons/fa";
-import MinisterData from "../MinisterData";
 import MinisterCont from "../components/MinisterCont";
 import SkeletonMain from "../components/SkeletonMain";
 function Minister() {

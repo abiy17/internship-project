@@ -6,8 +6,6 @@ function Dashboard() {
     const { CommentsData,SetCommentsData,ratingData,setratingData } = useContext(MyContext)
     let LastRating = ratingData[ratingData.length - 1]
     let LastElement = CommentsData[CommentsData.length-1]
-    console.log(LastRating)
-    console.log(LastElement)
     return (
         <div className="dashboardDep">
             <Nav />

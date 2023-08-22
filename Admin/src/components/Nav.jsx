@@ -7,7 +7,6 @@ function Nav() {
             <ul className="flex gap-8 items-center">
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="create">Create</NavLink>
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="edit"><li>Edit</li></NavLink>
-                <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="ratings">Ratings</NavLink>
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="comments">Comments</NavLink>
             </ul>
         </div>

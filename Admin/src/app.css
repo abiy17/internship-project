@@ -1,13 +1,17 @@
 body{
     background-color: whitesmoke;
 }
-.p{
-    
+.home-admin{
+    min-height: 43.62em;
+    overflow-y: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 254, 255, 0.89),rgba(243, 243, 243, 0.164)),url("./assets/download.png");
 }
 .button {
     display: inline-block;
     border-radius: 4px;
-    background-color: #07042c;
+    background-color: rgb(9, 44, 80);
     border: none;
     color: #FFFFFF;
     text-align: center;

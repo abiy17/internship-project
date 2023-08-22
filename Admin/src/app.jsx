@@ -12,7 +12,11 @@ import CreateOfficials from './pages/createOfficals';
 import OffEdit from './pages/OffEdit';
 import Comments from './pages/Comments';
 import Dashboard from './pages/DashboardDep';
+import DashboardOff from './pages/DashboardOff';
+import UpdatedOff from './pages/updateOff';
+
 export function App() {
+  const [selectedDep,setselectedDep] = useState()
   const [departments,setdepartments] = useState([])
   const [id,setid] = useState(0)
   const [disableBtn,setdisableBtn] = useState(false)
@@ -58,7 +62,8 @@ export function App() {
   return (
     <>
      <MyContext.Provider value={
-      {Officials,setOfficials,OffId,setOffId,CommentsData,SetCommentsData
+      {Officials,setOfficials,OffId,setOffId,
+        selectedDep,setselectedDep,CommentsData,SetCommentsData
         ,OfficalsDet,OfficalsData,setOfficalsData
         ,setOfficalsDet,OfficalsDir,setOfficalsDir
         ,uniqueId,setuniqueid,minister,setminister,detail
@@ -75,10 +80,12 @@ export function App() {
             <Route path='/dashboardDep' element={<Dashboard />}/>
             <Route path='/dashboardDep/create' element={<CreatePage />}/>
             <Route path='/dashboardDep/edit' element={<EditPage />}/>
-            <Route path='/dashboardDep/ratings' element={<Ratings />}/>
+            <Route path='/ratings' element={<Ratings />}/>
             <Route path='/dashboardDep/edit/update' element={<UpdatePage />}/>
-            <Route path='/Officals' element={<CreateOfficials />}/>
-            <Route path='/Officals/edit' element={<OffEdit />}/>
+            <Route path='/dashboardOff/Officals' element={<CreateOfficials />}/>
+            <Route path='/dashboardOff/edit' element={<OffEdit />}/>
+            <Route path='/dashboardOff/edit/updateOff' element={<UpdatedOff />}/>
+            <Route path='/dashboardOff' element={<DashboardOff />}/>
             <Route path='/minister' element={<CreateMin />}/>
             <Route path='/dashboardDep/comments' element={<Comments />}/>
           </Routes>

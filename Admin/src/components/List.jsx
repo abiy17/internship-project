@@ -3,9 +3,11 @@ import MyContext from "../context";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 function List(props) {
-    const { uniqueId,setuniqueid } = useContext(MyContext)
-    console.log(uniqueId)
+    const { uniqueId,setuniqueid,departments,selectedDep,setselectedDep} = useContext(MyContext)
+    console.log(selectedDep)
     const HandleClick =(Id)=>{
+        let filtered = departments.filter(item => item._id === Id)
+        setselectedDep(filtered)
         setuniqueid(Id)
     }
     const HandleDelete=(deletedId)=>{

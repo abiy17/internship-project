@@ -1,8 +1,9 @@
 import { useContext, useState } from "preact/hooks";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import MyContext from "../context";
 import axios from "axios";
 function CreateOfficials() {
+    const Navigate = useNavigate()
     const [VaildOffForm,setVaildOffForm] = useState(false)
     const {Officials,setOfficials,OfficalsDet,setOfficalsDet,OfficalsDir,setOfficalsDir} = useContext(MyContext)
     const HandleSubmit =(e)=>{
@@ -25,8 +26,7 @@ function CreateOfficials() {
             <div className="w-11/12 bg-white min-h-[4em] text-xl font-bold flex justify-around items-center m-auto">
                 <h1>Officals</h1>
                 <ul className="flex gap-8 items-center">
-                    <NavLink to="edit"><li>Edit</li></NavLink>
-                    <NavLink >Home</NavLink>
+                    <NavLink onClick={()=>Navigate(-1)}>DashBoard</NavLink>
                 </ul>
             </div>
             <div className="w-11/12 m-auto mt-5 rounded-lg h-[35em] bg-white">
