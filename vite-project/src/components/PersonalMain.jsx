@@ -11,8 +11,6 @@ function PersonalMain() {
     const {mode,selected,loading,setloading,setselected,officialsData,setofficialsData} = useContext(MyContext)
     return (
         <motion.div className={mode ?"Directions" : "Directions-light"}>
-
-                
                 <div className={mode ? "DepartmentNavv scroll-smooth w-11/12 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl h-[36em]" : "DepartmentNavv-light scroll-smooth overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-11/12 m-auto mt-6 h-[36em]"}>
                 <div  className="w-8/12 m-auto">
                     <p className="relative top-[-7em] text-lg font-semibold text-slate-600 text-center">Here are the list of all officials</p>
@@ -24,8 +22,8 @@ function PersonalMain() {
                         return value === "" ? item : item.Officials.includes(value)
                     }).map(item =>{
                         return <div className="h-[15em] hover:w-11/12 duration-300 w-4/5 m-auto sm:w-full rounded-lg shadow-md">
-                                    <div className="flex  items-center">
-                                        <img src={img} alt="" className="w-5/12"/>
+                                    <div className="flex items-center">
+                                        <img src={img} alt="" className="w-5/12 hover:scale-110 duration-300"/>
                                         <div className="flex flex-col p-2 rounded-md">
                                             <p className="text-slate-600">{item.Officials}</p>
                                             <p className="text-slate-600">Id:-{item._id.slice(0,20)}</p>

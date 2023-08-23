@@ -17,6 +17,7 @@ export function App() {
   const [officialsData,setofficialsData] = useState([])
   const [selected,setselected] = useState([officialsData[0]])
   const [ComMode,setComMode] = useState(false)
+  const [loadingMin,setloadingMin] = useState(true)
   useEffect(()=>{
     axios.get("http://localhost:5000/department")
     .then(res => {
@@ -26,7 +27,7 @@ export function App() {
     axios.get("http://localhost:5000/minister")
     .then(res => {
     setMinisterData(res.data)
-    setloading(false)
+    setloadingMin(false)
   })
   axios.get("http://localhost:5000/officials")
     .then(res => {
@@ -38,6 +39,7 @@ export function App() {
     <>
     <MyContext.Provider value={
       {mode,setmode,selected,setselected,
+        loadingMin,setloadingMin,
         ComMode,setComMode,officialsData,
         setofficialsData,MinisterData,setMinisterData
         ,RatingCpt,setRatingCpt,loading
