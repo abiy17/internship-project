@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 
 function Nav() {
+    const Navigate = useNavigate();
     return ( 
         <div className="w-11/12 bg-white min-h-[4em] text-xl font-bold flex justify-around items-center m-auto">
             <h1>Welcome Admin</h1>
@@ -8,6 +9,7 @@ function Nav() {
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="create">Create</NavLink>
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="edit"><li>Edit</li></NavLink>
                 <NavLink className="hover:opacity-10 active:opacity-70 duration-700" to="comments">Comments</NavLink>
+                <NavLink className="hover:opacity-10 active:opacity-70 duration-700" onClick={()=>Navigate(-1)}>Home</NavLink>
             </ul>
         </div>
      );

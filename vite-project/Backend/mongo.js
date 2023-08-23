@@ -119,6 +119,23 @@ const createOfficials = async (req,res,next)=>{
     }
 }
 
+const updateOfficials = async (req,res,next)=>{
+    const id = req.params.id;
+    const { Officials,OfficalsDet,OfficalsDir } = req.body
+    try{
+        officials = await OfficalsModel.findByIdAndUpdate(id,req.body,{ new:true }).then((officials)=>{
+            if(!officials){
+                res.status(404).send("error occured!")
+            }
+            res.json(officials)
+        })
+    }
+    catch(err){
+        res.json({mssge: err})
+    }
+
+}
+
 const deleteOfficials = async (req,res,next)=>{
     const id = req.params.id;
     try{
@@ -162,6 +179,7 @@ exports.createMinister = createMinister;
 exports.getMinister = getMinister;
 exports.createOfficials = createOfficials;
 exports.getOfficials = getOfficials;
+exports.updateOfficials = updateOfficials;
 exports.deleteOfficials = deleteOfficials;
 exports.createComment = createComment;
 exports.getComments = getComments;

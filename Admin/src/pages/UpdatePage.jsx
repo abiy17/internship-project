@@ -13,6 +13,7 @@ function UpdatePage() {
         setValidForm(true)
         setTimeout(() => {
             setValidForm(false)
+            Navigate(`/dashboardDep/edit`)
         }, 3000);
         setdepartment("")
         setdescription("")

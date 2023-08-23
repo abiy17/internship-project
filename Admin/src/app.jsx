@@ -14,6 +14,8 @@ import Comments from './pages/Comments';
 import Dashboard from './pages/DashboardDep';
 import DashboardOff from './pages/DashboardOff';
 import UpdatedOff from './pages/updateOff';
+import DashboardMin from './pages/DashboardMin';
+import MinEdit from './pages/MinEdit';
 
 export function App() {
   const [selectedDep,setselectedDep] = useState()
@@ -24,7 +26,7 @@ export function App() {
   const [description,setdescription] = useState("")
   const [direction,setdirection] = useState("")
   const [validId,setvalidId] = useState(false)
-  const [ validForm,setValidForm ] = useState(false)
+  const [validForm,setValidForm] = useState(false)
   const [uniqueId,setuniqueid] = useState("")
   const [OffId,setOffId] = useState("")
   const [ratingData,setratingData] = useState([])
@@ -37,6 +39,7 @@ export function App() {
   const [OfficalsDir,setOfficalsDir] = useState("")
   const [OfficalsData,setOfficalsData] = useState([])
   const [CommentsData,SetCommentsData] = useState([])
+  const [ministerData,setministerData] = useState([])
   useEffect(()=>{
     fetch(`http://localhost:5000/department`)
     .then(res => res.json())
@@ -57,6 +60,11 @@ export function App() {
         .then(res => res.json())
         .then(data => {
           setratingData(data)
+        })
+    fetch(`http://localhost:5000/minister`)
+        .then(res => res.json())
+        .then(data => {
+            setministerData(data)
         })
   },[])
   return (
@@ -86,7 +94,9 @@ export function App() {
             <Route path='/dashboardOff/edit' element={<OffEdit />}/>
             <Route path='/dashboardOff/edit/updateOff' element={<UpdatedOff />}/>
             <Route path='/dashboardOff' element={<DashboardOff />}/>
-            <Route path='/minister' element={<CreateMin />}/>
+            <Route path='/DashboardMin' element={<DashboardMin />}/>
+            <Route path='/DashboardMin/minister' element={<CreateMin />}/>
+            <Route path='/DashboardMin/edit' element={<MinEdit />}/>
             <Route path='/dashboardDep/comments' element={<Comments />}/>
           </Routes>
         </BrowserRouter>

@@ -31,6 +31,8 @@ app.get(`/officials`,mongo.getOfficials)
 
 app.post(`/officials`,mongo.createOfficials)
 
+app.put(`/officials/:id`,mongo.updateOfficials)
+
 app.delete(`/officials/:id`,mongo.deleteOfficials)
 
 app.get(`/comments`,mongo.getComments)

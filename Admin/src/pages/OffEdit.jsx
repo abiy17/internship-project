@@ -10,7 +10,7 @@ function OffEdit() {
             <div className="w-11/12 bg-white min-h-[4em] rounded text-xl font-bold flex justify-around items-center m-auto">
                 <h1>Edit page</h1>
                 <ul className="flex gap-8 items-center">
-                    <NavLink onClick={()=>Navigate(-1)}><li>Home</li></NavLink>
+                    <NavLink onClick={()=>Navigate(-1)}><li className="hover:opacity-60 duration-300">DashBoard</li></NavLink>
                 </ul>
             </div>
             <div className="w-11/12 bg-white pt-10 flex flex-col gap-5 min-h-[37em] m-auto mt-5">
