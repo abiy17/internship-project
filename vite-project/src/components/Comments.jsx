@@ -13,7 +13,7 @@ function Comments() {
     const HandleSubmit=(e)=>{
         alert("thanks for the comment")
         e.preventDefault();
-            axios.post(`http://localhost:5000/comments`,{ SelectedDep,optionOne,optiontwo,optionThree,optionFour,FeedBack }).catch(err => console.log(err))
+            axios.post(`https://mint-backend-c59t.onrender.com/comments`,{ SelectedDep,optionOne,optiontwo,optionThree,optionFour,FeedBack }).catch(err => console.log(err))
     }
     return ( 
         <form onSubmit={HandleSubmit}>

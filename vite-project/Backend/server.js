@@ -39,4 +39,4 @@ app.get(`/comments`,mongo.getComments)
 
 app.post(`/comments`,mongo.createComment)
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);

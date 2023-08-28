@@ -14,7 +14,7 @@ function Create() {
             setValidForm(false)
         }, 3000);
         e.preventDefault();
-        axios.post(`http://localhost:5000/department`,{id,department,description,direction})
+        axios.post(`https://mint-backend-c59t.onrender.com/department`,{id,department,description,direction})
         .then(res => console.log(res))
         .catch(err =>console.log(err))
         setdepartment("")

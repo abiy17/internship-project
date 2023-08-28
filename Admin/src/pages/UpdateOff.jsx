@@ -7,7 +7,7 @@ function UpdatedOff() {
     const { OffId,setOffId,Officials,setOfficials,OfficalsDet,setOfficalsDet,OfficalsDir,setOfficalsDir } = useContext(MyContext)
     console.log(OffId)
     const HandleSubmit=(e)=>{
-        axios.put(`http://localhost:5000/officials/${OffId}`,{ Officials,OfficalsDet,OfficalsDir })
+        axios.put(`https://mint-backend-c59t.onrender.com/officials/${OffId}`,{ Officials,OfficalsDet,OfficalsDir })
         .then(res => console.log(res.data))
         .catch(err => console.log(err))
         e.preventDefault();

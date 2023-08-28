@@ -19,17 +19,17 @@ export function App() {
   const [ComMode,setComMode] = useState(false)
   const [loadingMin,setloadingMin] = useState(true)
   useEffect(()=>{
-    axios.get("http://localhost:5000/department")
+    axios.get("https://mint-backend-c59t.onrender.com/department")
     .then(res => {
       setDepartment(res.data)
       setloading(false)
     })
-    axios.get("http://localhost:5000/minister")
+    axios.get("https://mint-backend-c59t.onrender.com/minister")
     .then(res => {
     setMinisterData(res.data)
     setloadingMin(false)
   })
-  axios.get("http://localhost:5000/officials")
+  axios.get("https://mint-backend-c59t.onrender.com/officials")
     .then(res => {
       setofficialsData(res.data)
       setloading(false)

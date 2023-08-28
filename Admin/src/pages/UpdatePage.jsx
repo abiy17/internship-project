@@ -8,7 +8,7 @@ function UpdatePage() {
     const { uniqueId,setuniqueid,departments,setdepartments,id,setid,validForm,setValidForm,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId } = useContext(MyContext)
     console.log(uniqueId)
     const HandleSubmit=(e)=>{
-        axios.put(`http://localhost:5000/department/${uniqueId}`,{department,description,direction})
+        axios.put(`https://mint-backend-c59t.onrender.com/department/${uniqueId}`,{department,description,direction})
         e.preventDefault();
         setValidForm(true)
         setTimeout(() => {

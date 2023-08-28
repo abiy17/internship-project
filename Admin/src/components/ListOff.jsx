@@ -8,7 +8,7 @@ function ListOff(props) {
         setOffId(Id)
     }
     const HandleDelete=(deletedId)=>{
-        axios.delete(`http://localhost:5000/officials/${deletedId}`).catch(err => console.log(err))
+        axios.delete(`https://mint-backend-c59t.onrender.com/officials/${deletedId}`).catch(err => console.log(err))
         alert("successfully deleted!")
     }
     return (

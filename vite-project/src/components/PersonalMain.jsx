@@ -26,7 +26,7 @@ function PersonalMain() {
                                         <img src={img} alt="" className="w-5/12 hover:scale-110 duration-300"/>
                                         <div className="flex flex-col p-2 rounded-md">
                                             <p className="text-slate-600">{item.Officials}</p>
-                                            <p className="text-slate-600">Id:-{item._id.slice(0,20)}</p>
+                                            <p className="text-slate-600">Id:-{item._id.slice(0,13)}</p>
                                             <p className="font-bold text-slate-600">{item.OfficalsDir}</p>
                                         </div>
                                     </div>

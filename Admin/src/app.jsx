@@ -41,27 +41,27 @@ export function App() {
   const [CommentsData,SetCommentsData] = useState([])
   const [ministerData,setministerData] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/department`)
+    fetch(`https://mint-backend-c59t.onrender.com/department`)
     .then(res => res.json())
     .then(data =>{
       setdepartments(data)
     }),
-    fetch(`http://localhost:5000/officials`)
+    fetch(`https://mint-backend-c59t.onrender.com/officials`)
         .then(res => res.json())
         .then(data => {
           setOfficalsData(data)
       })
-    fetch("http://localhost:5000/comments")
+    fetch("https://mint-backend-c59t.onrender.com/comments")
     .then(res => res.json())
     .then(data => {
       SetCommentsData(data)
     })
-    fetch(`http://localhost:5000/ratings`)
+    fetch(`https://mint-backend-c59t.onrender.com/ratings`)
         .then(res => res.json())
         .then(data => {
           setratingData(data)
         })
-    fetch(`http://localhost:5000/minister`)
+    fetch(`https://mint-backend-c59t.onrender.com/minister`)
         .then(res => res.json())
         .then(data => {
             setministerData(data)
