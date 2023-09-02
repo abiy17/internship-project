@@ -111,7 +111,7 @@ const getOfficials = async (req,res,next)=>{
 const createOfficials = async (req,res,next)=>{
     const { OfficialImg,Officials,OfficalsDet,OfficalsDir } = req.body
     try{
-        officials = await OfficalsModel.create({ Officials,OfficalsDet,OfficalsDir })
+        officials = await OfficalsModel.create({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
         res.status(200).json(officials)
     }
     catch(err){
