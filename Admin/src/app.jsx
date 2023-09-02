@@ -34,6 +34,7 @@ export function App() {
   const [detail,setdetail] = useState("")
   const [Mindirection,setMindirection] = useState()
   const [MinImage,setMinImage] = useState("")
+  const [OfficialImg,setOfficialImg] = useState("")
   const [Officials,setOfficials] = useState("")
   const [OfficalsDet,setOfficalsDet]= useState("")
   const [OfficalsDir,setOfficalsDir] = useState("")
@@ -70,7 +71,8 @@ export function App() {
   return (
     <>
      <MyContext.Provider value={
-      {Officials,setOfficials,OffId,setOffId,
+      {Officials,setOfficials,OffId,ministerData,
+        OfficialImg,setOfficialImg,setministerData,setOffId,
         selectedDep,setselectedDep,CommentsData,SetCommentsData
         ,OfficalsDet,OfficalsData,setOfficalsData
         ,setOfficalsDet,OfficalsDir,setOfficalsDir
