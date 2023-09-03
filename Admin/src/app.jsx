@@ -47,7 +47,7 @@ export function App() {
     .then(data =>{
       setdepartments(data)
     }),
-    fetch(`https://mint-backend-c59t.onrender.com/officials`)
+    fetch(`http://localhost:5000/officials`)
         .then(res => res.json())
         .then(data => {
           setOfficalsData(data)
