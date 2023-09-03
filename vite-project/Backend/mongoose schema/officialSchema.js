@@ -7,5 +7,5 @@ const OfficialSchema = new mongoose.Schema({
     OfficalsDir: { type: String,required: true}
 })
 
-const officialsModel = mongoose.model(`officials`,OfficialSchema)
+const officialsModel = mongoose.model(`officialssss`,OfficialSchema)
 module.exports = officialsModel
