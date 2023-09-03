@@ -41,6 +41,7 @@ function CreateOfficials() {
                         <label className="flex gap-10">
                             <p className="text-slate-700 text-xl">Image:</p>
                             <input className="w-2/3 h-[4em]" onChange={FileChange} type="file" required/>
+                            <img src={OfficialImg} alt="" className="w-10 relative left-[-5em] h-10 rounded"/>
                         </label>
                     </div>
                     <div className="min-w-[30em]">

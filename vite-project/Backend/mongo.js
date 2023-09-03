@@ -111,8 +111,8 @@ const getOfficials = async (req,res,next)=>{
 const createOfficials = async (req,res,next)=>{
     const { OfficialImg,Officials,OfficalsDet,OfficalsDir } = req.body
     try{
-        officials = await OfficalsModel.create({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
-        res.status(200).json(officials)
+        officials = await OfficalsModel.create({ Officials,OfficialImg,OfficalsDet,OfficalsDir })
+        res.status(200).Json(officials)
     }
     catch(err){
         res.json({message: "coudn't create officials"})
