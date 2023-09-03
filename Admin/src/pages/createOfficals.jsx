@@ -16,7 +16,7 @@ function CreateOfficials() {
         if( Officials !== "" && OfficalsDet !== "" && OfficalsDir !== ""){
             setVaildOffForm(true)
         }
-        axios.post(`https://mint-backend-c59t.onrender.com/officials`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
+        axios.post(`http://localhost:5000/officials`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
         .then(res => console.log(res))
         .catch((err)=>console.log(err))
         setTimeout(() => {
