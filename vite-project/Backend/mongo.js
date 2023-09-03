@@ -5,7 +5,6 @@ const multer = require(`multer`)
 const departmentModel = require("./mongoose schema/department-schema")
 const ratingModel = require("./mongoose schema/ratingSchema")
 const MinisterModel = require(`./mongoose schema/ministerSchema`)
-const OfficalsModel = require(`./mongoose schema/officalsSchema`);
 const CommentModel = require("./mongoose schema/CommentSchema");
 mongoose.connect('mongodb+srv://chuna:kdb17aby@cluster0.17tjqjc.mongodb.net/');
 let departments;
@@ -111,8 +110,7 @@ const getOfficials = async (req,res,next)=>{
 const createOfficials = async (req,res,next)=>{
     const { OfficialImg,Officials,OfficalsDet,OfficalsDir } = req.body
     try{
-        officials = await OfficalsModel.create({ Officials,OfficialImg,OfficalsDet,OfficalsDir })
-        res.status(200).Json(officials)
+        res.send({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
     }
     catch(err){
         res.json({message: "coudn't create officials"})
