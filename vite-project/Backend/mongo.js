@@ -1,7 +1,7 @@
 const MongoClient = require(`mongodb`).MongoClient;
 const mongoose = require(`mongoose`)
 const multer = require(`multer`)
-
+const officialsModel = require("./mongoose schema/officialSchema")
 const departmentModel = require("./mongoose schema/department-schema")
 const ratingModel = require("./mongoose schema/ratingSchema")
 const MinisterModel = require(`./mongoose schema/ministerSchema`)
@@ -98,7 +98,7 @@ const getMinister = async (req,res,next)=>{
 let officials;
 const getOfficials = async (req,res,next)=>{
     try{
-        officials = await OfficalsModel.find();
+        officials = await officialsModel.find();
         res.json(officials)
     }
     catch(err){
@@ -110,7 +110,7 @@ const getOfficials = async (req,res,next)=>{
 const createOfficials = async (req,res,next)=>{
     const { OfficialImg,Officials,OfficalsDet,OfficalsDir } = req.body
     try{
-        res.send({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
+        officials = await officialsModel.create({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
     }
     catch(err){
         res.json({message: "coudn't create officials"})
@@ -121,7 +121,7 @@ const updateOfficials = async (req,res,next)=>{
     const id = req.params.id;
     const { Officials,OfficalsDet,OfficalsDir } = req.body
     try{
-        officials = await OfficalsModel.findByIdAndUpdate(id,req.body,{ new:true }).then((officials)=>{
+        officials = await officialsModel.findByIdAndUpdate(id,req.body,{ new:true }).then((officials)=>{
             if(!officials){
                 res.status(404).send("error occured!")
             }
@@ -137,7 +137,7 @@ const updateOfficials = async (req,res,next)=>{
 const deleteOfficials = async (req,res,next)=>{
     const id = req.params.id;
     try{
-        officials = await OfficalsModel.findByIdAndDelete(id)
+        officials = await officialsModel.findByIdAndDelete(id)
         res.status(200)
     }
     catch(err){
