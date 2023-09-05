@@ -95,6 +95,33 @@ const getMinister = async (req,res,next)=>{
         res.status(404).json({message: "something went wrong!"})
     }
 }
+
+const deleteMinister = async (req,res,next) =>{
+    const id = req.params.id
+    try{
+        ministers = await MinisterModel.findByIdAndDelete(id)
+        res.send("success!")
+    }
+    catch(err){
+        res.json({ mssge: err })
+    }
+}
+
+const UpdateMinister = async (req,res,next) =>{
+    const id = req.params.id
+    try{
+        ministers = await MinisterModel.findByIdAndUpdate(id,req.body,{ new: true }).then(ministers =>{
+            if(!ministers){
+                res.status(404).send("error occured!")
+            }
+            res.json(ministers)
+        })
+    }
+    catch(err){
+        res.json({ mssge: err })
+    }
+}
+
 let officials;
 const getOfficials = async (req,res,next)=>{
     try{
@@ -111,7 +138,7 @@ const createOfficials = async (req,res,next)=>{
     const { OfficialImg,Officials,OfficalsDet,OfficalsDir } = req.body
     try{
         officials = await officialsModel.create({ OfficialImg,Officials,OfficalsDet,OfficalsDir })
-        res.send(200).json(officials)
+        res.status(200).json(officials)
     }
     catch(err){
         res.json({message: "coudn't create officials"})
@@ -176,6 +203,8 @@ exports.updateDepartment = updateDepartment;
 exports.createRating = createRating;
 exports.createMinister = createMinister;
 exports.getMinister = getMinister;
+exports.deleteMinister = deleteMinister;
+exports.UpdateMinister = UpdateMinister;
 exports.createOfficials = createOfficials;
 exports.getOfficials = getOfficials;
 exports.updateOfficials = updateOfficials;

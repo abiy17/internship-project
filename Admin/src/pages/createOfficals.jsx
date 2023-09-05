@@ -16,12 +16,14 @@ function CreateOfficials() {
         if( Officials !== "" && OfficalsDet !== "" && OfficalsDir !== ""){
             setVaildOffForm(true)
         }
+        alert("Caution! Don't Referesh the page")
         axios.post(`http://localhost:5000/officials`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
         .then(res => console.log(res))
         .catch((err)=>console.log(err))
         setTimeout(() => {
             setVaildOffForm(false)
         }, 3000);
+        setOfficialImg("")
         setOfficials("")
         setOfficalsDet("")
         setOfficalsDir("")
@@ -41,7 +43,7 @@ function CreateOfficials() {
                         <label className="flex gap-10">
                             <p className="text-slate-700 text-xl">Image:</p>
                             <input className="w-2/3 h-[4em]" onChange={FileChange} type="file" required/>
-                            <img src={OfficialImg} alt="" className="w-10 relative left-[-5em] h-10 rounded"/>
+                            <img src={OfficialImg} alt="" className="rounded w-10"/>
                         </label>
                     </div>
                     <div className="min-w-[30em]">

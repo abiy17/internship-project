@@ -3,9 +3,9 @@ require("dotenv").config();
 const bodyParser = require(`body-parser`)
 const mongo = require(`./mongo`)
 const app = express();
-app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.json({limit: '100mb'}));
 const cors = require(`cors`)
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -26,6 +26,10 @@ app.post(`/rating`, mongo.createRating)
 app.get(`/minister`,mongo.getMinister)
 
 app.post(`/minister`,mongo.createMinister)
+
+app.delete(`/ministers/:id`,mongo.deleteMinister)
+
+app.put(`/ministers/:id`,mongo.UpdateMinister)
 
 app.get(`/officials`,mongo.getOfficials)
 

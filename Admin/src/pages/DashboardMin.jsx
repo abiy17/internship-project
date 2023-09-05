@@ -31,15 +31,21 @@ function DashboardMin() {
                 <div className="w-2/6  min-h-[37em] flex flex-col gap-4 pt-10">
                 <div className="min-h-[12em] rounded-lg hover:p-8 text-black p-7 duration-300 bg-stone-50">
                         <p className="font-bold font-serif mb-5">Recently Created Ministers</p>
-                        <div className="flex items-center gap-3">   
-                            <div>
-                                <div className="flex gap-2 items-center">
-                                    <p className="font-semibold ml-2">image: </p><img src={recentlyCreated.MinImage} alt="" className="w-14"/>
-                                </div>
-                                <p className="font-semibold p-2">Full Name: {recentlyCreated.minister} </p>
-                                <p className="font-semibold p-2">Detail: {recentlyCreated.detail}</p>
-                                <p className="font-semibold p-2">Direction: {recentlyCreated.Mindirection}</p>
+                        <div className="flex items-center gap-3">
+                        {recentlyCreated === undefined || recentlyCreated === {} || recentlyCreated === null ? 
+                        <div className="flex items-center gap-3">
+                            <img src={sad} alt="" className="w-10"/>
+                            <p>opps!,you haven,t created new Officials</p>
+                        </div> : 
+                        <div>
+                            <div className="flex gap-2 items-center">
+                                <p className="font-semibold ml-2">image: </p><img src={recentlyCreated.MinImage} alt="" className="w-14"/>
                             </div>
+                            <p className="font-semibold p-2">Full Name: {recentlyCreated.minister} </p>
+                            <p className="font-semibold p-2">Detail: {recentlyCreated.detail}</p>
+                            <p className="font-semibold p-2">Direction: {recentlyCreated.Mindirection}</p>
+                        </div>}   
+                            
                         </div>
                     </div>
                     <div className="h-[19.5em] overflow-y-scroll pl-8 pt-5 rounded-lg duration-300 bg-slate-700 text-white">

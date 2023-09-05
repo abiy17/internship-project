@@ -16,6 +16,7 @@ import DashboardOff from './pages/DashboardOff';
 import UpdatedOff from './pages/updateOff';
 import DashboardMin from './pages/DashboardMin';
 import MinEdit from './pages/MinEdit';
+import UpdateMin from './pages/UpdateMin';
 
 export function App() {
   const [selectedDep,setselectedDep] = useState()
@@ -38,20 +39,17 @@ export function App() {
   const [Officials,setOfficials] = useState("")
   const [OfficalsDet,setOfficalsDet]= useState("")
   const [OfficalsDir,setOfficalsDir] = useState("")
+  const [Minid,setMinid] = useState("")
   const [OfficalsData,setOfficalsData] = useState([])
   const [CommentsData,SetCommentsData] = useState([])
   const [ministerData,setministerData] = useState([])
+  console.log(ministerData)
   useEffect(()=>{
     fetch(`https://mint-backend-c59t.onrender.com/department`)
     .then(res => res.json())
     .then(data =>{
       setdepartments(data)
     }),
-    fetch(`http://localhost:5000/officials`)
-        .then(res => res.json())
-        .then(data => {
-          setOfficalsData(data)
-      })
     fetch("https://mint-backend-c59t.onrender.com/comments")
     .then(res => res.json())
     .then(data => {
@@ -67,12 +65,20 @@ export function App() {
         .then(data => {
             setministerData(data)
         })
+      
+  },[])
+  useEffect(()=>{
+    fetch(`http://localhost:5000/officials`)
+        .then(res => res.json())
+        .then(data => {
+          setOfficalsData(data)
+      })
   },[])
   return (
     <>
      <MyContext.Provider value={
       {Officials,setOfficials,OffId,ministerData,
-        OfficialImg,setOfficialImg,setministerData,setOffId,
+        Minid,setMinid,OfficialImg,setOfficialImg,setministerData,setOffId,
         selectedDep,setselectedDep,CommentsData,SetCommentsData
         ,OfficalsDet,OfficalsData,setOfficalsData
         ,setOfficalsDet,OfficalsDir,setOfficalsDir
@@ -97,6 +103,7 @@ export function App() {
             <Route path='/dashboardOff/edit/updateOff' element={<UpdatedOff />}/>
             <Route path='/dashboardOff' element={<DashboardOff />}/>
             <Route path='/DashboardMin' element={<DashboardMin />}/>
+            <Route path='/DashboardMin/edit/updatemin' element={<UpdateMin />}/>
             <Route path='/DashboardMin/minister' element={<CreateMin />}/>
             <Route path='/DashboardMin/edit' element={<MinEdit />}/>
             <Route path='/dashboardDep/comments' element={<Comments />}/>

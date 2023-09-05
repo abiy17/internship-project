@@ -39,7 +39,7 @@ function DashboardOff() {
                             <p>opps!,you haven,t created new Officials</p>
                         </div> : 
                             <div>
-                                <p>image: <img src={recentlyCreated.OfficialImg} alt="" /></p>
+                                <p className="flex gap-3 font-mono font-semibold">image: <img src={recentlyCreated.OfficialImg} alt="" className="w-10"/></p>
                                 <p className="font-semibold">Full Name: {recentlyCreated.Officials}</p>
                                 <p className="font-semibold">Detail: {recentlyCreated.OfficalsDet}</p>
                                 <p className="font-semibold">Direction: {recentlyCreated.OfficalsDir}</p>

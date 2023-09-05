@@ -1,9 +1,10 @@
 import { useContext,useState } from "preact/hooks";
-import { NavLink, resolvePath } from "react-router-dom"
+import { NavLink, resolvePath, useNavigate } from "react-router-dom"
 import MyContext from "../context";
 import axios from "axios";
 function CreateMin() {
     const [VaildMinForm,setVaildMinForm] = useState(false)
+    const Navigate = useNavigate();
     const { minister,setminister,detail,setdetail,Mindirection,setMindirection,MinImage,setMinImage } = useContext(MyContext)
     const FileChange = async (e)=>{
         const file = e.target.files[0];
@@ -34,7 +35,7 @@ function CreateMin() {
             <h1>Ministers</h1>
             <ul className="flex gap-8 items-center">
                 <NavLink ><li>Edit</li></NavLink>
-                <NavLink >Home</NavLink>
+                <NavLink onClick={()=>Navigate(-1)}>Home</NavLink>
             </ul>
         </div>
             <div className="w-11/12 m-auto mt-5 rounded-lg h-[35em] bg-white">

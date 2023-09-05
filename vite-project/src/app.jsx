@@ -29,7 +29,7 @@ export function App() {
     setMinisterData(res.data)
     setloadingMin(false)
   })
-  axios.get("https://mint-backend-c59t.onrender.com/officials")
+  axios.get("http://localhost:5000/officials")
     .then(res => {
       setofficialsData(res.data)
       setloading(false)
