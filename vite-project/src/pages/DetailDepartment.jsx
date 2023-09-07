@@ -14,14 +14,14 @@ function DetailDepartment() {
         setselectedDepartment(newSelectedDepartment)
     }
     return (
-        <motion.div className={mode ?"Directions" : "Directions-light"}>
-            <div className={mode ? "DepartmentNav sticky top-3 flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : "DepartmentNav-light sticky top-3 flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
+        <motion.div className={mode ?"Directions md:h-[1280px] lg:h-[42em]" : "Directions-light md:h-[1280px] lg:h-[42em]"}>
+            <div className={mode ? "DepartmentNav sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : "DepartmentNav-light sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
                 <h1 className={mode ? "text-white flex gap-2 font-serif items-center" : "text-slate-800 flex gap-2 items-center font-serif"}><FaBuilding /><p className="hidden sm:block">የስራ ክፍሎች</p></h1>
                 <button onClick={()=>Navigate(-2)} className={mode ? "text-white hover:opacity-40 duration-300 flex font-serif items-center" : "text-slate-800 hover:opacity-40 duration-300 font-serif flex items-center"}><FaMagento  className="mr-3"/><p className="hidden sm:block">ዋና ገጽ</p></button>
             </div>
             <Rating />
             <div className="flex gap-4 w-11/12 m-auto mt-7">
-                <div className={mode ? "DepartmentNavv hidden md:block scroll-smooth overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-[35%] h-[1000px]" : "DepartmentNavv-light hidden md:block overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-[35%] h-[1000px]"}>
+                <div className={mode ? "DepartmentNavv hidden md:block scroll-smooth overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-[35%] md:h-[1000px] lg:h-[36em]" : "DepartmentNavv-light hidden md:block overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-[35%] md:h-[1000px] lg:h-[36em]"}>
                     <h1 className={mode ? "text-white relative top-[-3em] text-[2em]" : "text-slate-800 relative top-[-3em] font-serif text-[2em]"}>ሌሎች የስራ ክፍሎች</h1>
                     <ul className="flex flex-col gap-10 pb-8">
                         {OtherDepartments.map(item => {
@@ -30,7 +30,7 @@ function DetailDepartment() {
                     </ul>
                 </div>
                 
-                <div className={mode ? "w-[99.9%]  md:w-[65%] DepartmentNav rounded-xl  scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 h-[1000px]" : "w-[99.9%] md:w-[65%] DepartmentNav-light overflow-x-hidden scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl h-[1000px]"}>
+                <div className={mode ? "w-[99.9%]  md:w-[65%] DepartmentNav rounded-xl  scroll-smooth overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 h-[24em] md:h-[1000px] lg:h-[24em]" : "w-[99.9%] md:w-[65%] DepartmentNav-light overflow-x-hidden scroll-smooth scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl h-[24em] md:h-[1000px] lg:h-[24em]"}>
                        <div className="w-11/12 relative top-10 flex flex-col gap-4 h-24 m-auto">
                             <div className="flex gap-2">
                                 <p className={mode ? "text-white" : "text-slate-800"}>{selectedDepartment.id},</p>

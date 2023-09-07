@@ -11,8 +11,6 @@ body{
 }
 .image{
   background-size: contain;
-  width: 15em;
-  height: 15em;
 }
 .personal{
   height: 1280px;
@@ -40,14 +38,11 @@ body{
 }
 .Directions{
   overflow-y: hidden;
-    z-index: 1;
     background-color: rgb(0, 0, 10);
-    height: 1280px;
 }
 .Directions-light{
     overflow-y: hidden;
     background-color: whitesmoke;
-    height: 1150px;
 }
 .departmentCont{
     background-color: rgba(18, 18, 29, 0.863);
@@ -79,6 +74,12 @@ body{
   padding-top: 10em;
   padding-left: 20px;
   background-color: white;
+  height: 1280px;
+}
+.officialcontainer-dark{
+  padding-top: 10em;
+  padding-left: 20px;
+  background-color: rgba(12, 12, 19, 0.863);
   height: 1280px;
 }
 .DepartmentNavv{

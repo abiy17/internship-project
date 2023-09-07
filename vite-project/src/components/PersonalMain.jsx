@@ -10,8 +10,8 @@ function PersonalMain() {
     const [value,setvalue] = useState("")
     const {mode,selected,loading,setloading,setselected,officialsData,setofficialsData} = useContext(MyContext)
     return (
-        <motion.div className={mode ?"Directions" : "Directions-light"}>
-                <div className={mode ? "DepartmentNavv scroll-smooth w-11/12 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 m-auto mt-6 rounded-xl" : "officialcontainer scroll-smooth overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-11/12 m-auto mt-6"}>
+        <motion.div className={mode ?"Directions overflow-y-scroll" : "Directions-light overflow-y-scroll"}>
+                <div className={mode ? "officialcontainer-dark scroll-smooth w-11/12 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 m-auto mt-6 rounded-xl" : "officialcontainer scroll-smooth overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 rounded-xl w-11/12 m-auto mt-6"}>
                 <div  className="w-8/12 m-auto">
                     <p className="relative top-[-7em] text-lg font-semibold text-slate-600 text-center">Here are the list of all officials</p>
                     <FaSearch className="text-slate-300 relative top-[-4.8em] left-14 z-50"/>
