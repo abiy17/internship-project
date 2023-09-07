@@ -18,7 +18,7 @@ function CreateMin() {
             setVaildMinForm(true)
             alert("Warning:- Uploading image may take a few time...")
         }
-        axios.post(`https://mint-backend-c59t.onrender.com/minister`,{ MinImage,minister,detail,Mindirection }).catch((err)=>{
+        axios.post(`https://mint-server-omd5.onrender.com/minister`,{ MinImage,minister,detail,Mindirection }).catch((err)=>{
             console.log(err)
         })
         setTimeout(() => {

@@ -10,7 +10,7 @@ function ListMin(props) {
         setMinid(Id)
     }
     const HandleDelete =(deletedId) =>{
-        axios.delete(`http://localhost:5000/ministers/${deletedId}`).catch(err => console.log(err))
+        axios.delete(`https://mint-server-omd5.onrender.com/ministers/${deletedId}`).catch(err => console.log(err))
         alert("Deleted Sucessesfully!")
     }
     return (

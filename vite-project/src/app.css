@@ -2,11 +2,12 @@ body{
   background-color: whitesmoke;
 }
 #homePage{
-    min-height: 43.62em;
-    overflow-y: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: linear-gradient(rgba(10, 9, 9, 0.719),rgb(0, 0, 10));
+  min-height: 43.62em;
+  overflow-y: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(10, 9, 9, 0.616),rgb(0, 0, 10)),url("./assets/download.png");
     
 }
 .image{
@@ -15,12 +16,12 @@ body{
   height: 15em;
 }
 .personal{
+  height: 1280px;
   overflow-y: hidden;
-  height: 43.455em;
   background-color: whitesmoke;
 }
 .personal-dark{
-  height: 43.455em;
+  height: 1280px;
   overflow-y: hidden;
   background-color: rgb(0, 0, 10);
 }
@@ -28,8 +29,9 @@ body{
     min-height: 43.62em;
     overflow-y: hidden;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 254, 255, 0.89),rgba(243, 243, 243, 0.897));
+    background-image: linear-gradient(rgba(255, 254, 255, 0.438),rgba(243, 243, 243, 0.897)),url("./assets/download.png");
 }
 .departementDark{
     background-color: rgb(0, 0, 10);
@@ -41,13 +43,12 @@ body{
   overflow-y: hidden;
     z-index: 1;
     background-color: rgb(0, 0, 10);
-    height: 43.4em;
+    height: 1280px;
 }
 .Directions-light{
-  overflow-y: hidden;
+    overflow-y: hidden;
     background-color: whitesmoke;
-    height: 43.4em;
-    z-index: 1;
+    height: 1150px;
 }
 .departmentCont{
     background-color: rgba(18, 18, 29, 0.863);
@@ -75,6 +76,12 @@ body{
     align-items: center;
     font-size: x-large;
 }
+.officialcontainer{
+  padding-top: 10em;
+  padding-left: 20px;
+  background-color: white;
+  height: 1280px;
+}
 .DepartmentNavv{
     padding-top: 10em;
     padding-left: 20px;
@@ -84,6 +91,12 @@ body{
     padding-top: 10em;
     padding-left: 20px;
     background-color: white;
+}
+.ministercont{
+  background-color: rgba(4, 4, 14, 0.863);
+}
+.ministerr{
+  background-color: rgb(0, 0, 10);
 }
 .li{
     background-color: rgba(24, 24, 37, 0.425);

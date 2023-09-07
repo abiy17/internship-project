@@ -4,9 +4,6 @@ import MyContext from "../context";
 function Ratings() {
     const Navigate = useNavigate()
     const { ratingData,setratingData } = useContext(MyContext)
-    useEffect(()=>{
-        
-      },[])
     return (
         <div className="ratings flex flex-col gap-5">
             <div className="w-11/12 bg-white min-h-[4em] text-xl font-bold flex justify-around items-center m-auto">

@@ -12,7 +12,7 @@ function UpdateMin() {
 }
 const HandleSubmit=(e)=>{   
     e.preventDefault();
-    axios.put(`http://localhost:5000/ministers/${Minid}`,{ MinImage,minister,detail,Mindirection })
+    axios.put(`https://mint-server-omd5.onrender.com/ministers/${Minid}`,{ MinImage,minister,detail,Mindirection })
     .then(res => console.log(res.data))
     .catch(err => console.log(err))
     alert("Operation was sucessefull!")

@@ -9,7 +9,7 @@ function Rating() {
     const { RatingCpt,setRatingCpt,mode,setmode } = useContext(MyContext)
     const HandleRating=(e)=>{
         e.preventDefault();
-        axios.post(`https://mint-backend-c59t.onrender.com/rating`,{ Rating,feedback })
+        axios.post(`https://mint-server-omd5.onrender.com/rating`,{ Rating,feedback })
         alert("Thanks for the Feedback!")
         setRatingCpt(false)
         setRating(0);

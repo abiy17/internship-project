@@ -11,7 +11,7 @@ function List(props) {
         setuniqueid(Id)
     }
     const HandleDelete=(deletedId)=>{
-        axios.delete(`https://mint-backend-c59t.onrender.com/department/${deletedId}`).catch(err => console.log(err))
+        axios.delete(`https://mint-server-omd5.onrender.com/department/${deletedId}`).catch(err => console.log(err))
         alert("successfully deleted!")
     }
     return (

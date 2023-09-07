@@ -12,7 +12,7 @@ function DepartmentCont(props) {
         setOtherDepartments(OtherDepartments)
         setTimeout(() => {
             setRatingCpt(true)
-        }, 10000);
+        }, 19000);
     }
     return (
         <div className={mode ? "shadow-md text-stone-50 cursor-pointer departmentCont grid justify-center p-1  duration-300 w-5/6 m-auto rounded-xl text-center items-center min-h-[13em] max-h-[15em]" : "shadow-md bg-stone-50 hover:w-11/12 border-[1px] cursor-pointer grid justify-center p-1 text-slate-800 duration-300 w-5/6 m-auto rounded-xl text-center items-center min-h-[13em] max-h-[15em]"}>

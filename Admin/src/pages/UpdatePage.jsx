@@ -1,5 +1,5 @@
 import { NavLink,useNavigate } from "react-router-dom";
-import Create from "../components/create";
+import Create from "../components/Create";
 import { useContext } from "preact/hooks";
 import MyContext from "../context";
 import axios from "axios";
@@ -8,7 +8,7 @@ function UpdatePage() {
     const { uniqueId,setuniqueid,departments,setdepartments,id,setid,validForm,setValidForm,disableBtn,setdisableBtn,department,setdepartment,description,setdescription,direction,setdirection,validId,setvalidId } = useContext(MyContext)
     console.log(uniqueId)
     const HandleSubmit=(e)=>{
-        axios.put(`https://mint-backend-c59t.onrender.com/department/${uniqueId}`,{department,description,direction})
+        axios.put(`https://mint-server-omd5.onrender.com/department/${uniqueId}`,{department,description,direction})
         e.preventDefault();
         setValidForm(true)
         setTimeout(() => {

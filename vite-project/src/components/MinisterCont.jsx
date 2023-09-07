@@ -4,7 +4,7 @@ import MyContext from "../context";
 function MinisterCont(props) {
     const { mode } = useContext(MyContext)
     return (
-        <div className={mode ? "w-10/12 pl-14 pt-5 pb-5 sm:pb-0 sm:pt-0 sm:pl-0  md:flex hover:w-11/12 m-auto bg-gray-950 cursor-pointer duration-300 rounded-lg min-h-[15em] mt-5" : "w-10/12 pl-14 pt-5 pb-5 sm:pb-0 sm:pt-0 sm:pl-0 md:flex hover:w-11/12 m-auto bg-stone-50 cursor-pointer duration-300 rounded-lg min-h-[15em] mt-5"}>
+        <div className={mode ? "w-10/12 pl-14 bg-gray-950 shadow-2xl pb-5 sm:pb-0 sm:pt-0 sm:pl-0  xl:flex hover:w-11/12 m-auto cursor-pointer duration-300 rounded-lg min-h-[15em] mt-5" : "w-10/12 pl-14 pb-5 sm:pb-0 sm:pt-0 sm:pl-0 xl:flex hover:w-11/12 m-auto bg-stone-50 cursor-pointer duration-300 rounded-lg min-h-[15em] mt-5"}>
             <div className="">
                 <img src={props.MinImage} className="image hover:scale-110 rounded-lg duration-300"/>
             </div>

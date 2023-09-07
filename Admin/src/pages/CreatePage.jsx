@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import Create from "../components/create";
+import Create from "../components/Create";
 import Nav from "../components/Nav"
 function CreatePage() {
     const Navigate = useNavigate()

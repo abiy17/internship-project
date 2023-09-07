@@ -11,7 +11,7 @@ function UpdatedOff() {
         setOfficialImg(base64);
     }
     const HandleSubmit=(e)=>{
-        axios.put(`http://localhost:5000/officials/${OffId}`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
+        axios.put(`https://mint-server-omd5.onrender.com/officials/${OffId}`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
         .then(res => console.log(res.data))
         .catch(err => console.log(err))
         e.preventDefault();

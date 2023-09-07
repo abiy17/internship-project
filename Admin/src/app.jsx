@@ -13,7 +13,7 @@ import OffEdit from './pages/OffEdit';
 import Comments from './pages/Comments';
 import Dashboard from './pages/DashboardDep';
 import DashboardOff from './pages/DashboardOff';
-import UpdatedOff from './pages/updateOff';
+import UpdatedOff from './pages/UpdateOff';
 import DashboardMin from './pages/DashboardMin';
 import MinEdit from './pages/MinEdit';
 import UpdateMin from './pages/UpdateMin';
@@ -45,22 +45,22 @@ export function App() {
   const [ministerData,setministerData] = useState([])
   console.log(ministerData)
   useEffect(()=>{
-    fetch(`https://mint-backend-c59t.onrender.com/department`)
+    fetch(`https://mint-server-omd5.onrender.com/department`)
     .then(res => res.json())
     .then(data =>{
       setdepartments(data)
     }),
-    fetch("https://mint-backend-c59t.onrender.com/comments")
+    fetch("https://mint-server-omd5.onrender.com/comments")
     .then(res => res.json())
     .then(data => {
       SetCommentsData(data)
     })
-    fetch(`https://mint-backend-c59t.onrender.com/ratings`)
+    fetch(`https://mint-server-omd5.onrender.com/ratings`)
         .then(res => res.json())
         .then(data => {
           setratingData(data)
         })
-    fetch(`https://mint-backend-c59t.onrender.com/minister`)
+    fetch(`https://mint-server-omd5.onrender.com/minister`)
         .then(res => res.json())
         .then(data => {
             setministerData(data)
@@ -68,7 +68,7 @@ export function App() {
       
   },[])
   useEffect(()=>{
-    fetch(`http://localhost:5000/officials`)
+    fetch(`https://mint-server-omd5.onrender.com/officials`)
         .then(res => res.json())
         .then(data => {
           setOfficalsData(data)

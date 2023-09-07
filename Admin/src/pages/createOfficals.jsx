@@ -17,7 +17,7 @@ function CreateOfficials() {
             setVaildOffForm(true)
         }
         alert("Caution! Don't Referesh the page")
-        axios.post(`http://localhost:5000/officials`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
+        axios.post(`https://mint-server-omd5.onrender.com/officials`,{ OfficialImg,Officials,OfficalsDet,OfficalsDir })
         .then(res => console.log(res))
         .catch((err)=>console.log(err))
         setTimeout(() => {
