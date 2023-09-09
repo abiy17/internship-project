@@ -7,7 +7,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(rgba(10, 9, 9, 0.616),rgb(0, 0, 10)),url("./assets/download.png");
+  background-image: linear-gradient(rgba(10, 9, 9, 0.616),rgb(0, 0, 10)),url("./assets/photo1694080819.jpeg");
 }
 .image{
   background-size: contain;
@@ -28,7 +28,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 254, 255, 0.438),rgba(243, 243, 243, 0.897)),url("./assets/download.png");
+    background-image: linear-gradient(rgba(255, 254, 255, 0.438),rgba(243, 243, 243, 0.897)),url("./assets/photo1694080819.jpeg");
 }
 .departementDark{
     background-color: rgb(0, 0, 10);
