@@ -11,7 +11,7 @@ function Minister() {
     return (
         <div className={mode ? "h-[1280px] left-0 w-full bg-gray-950" : "h-[1280px]  left-0 w-full"}>
             <div  className={mode ? "text-2xl sticky flex shadow-2xl h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : " p-9 shadow-md text-slate-800  text-2xl bg-white sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
-                <h1 className={mode ? "text-white flex gap-4 items-center" : "flex gap-2 items-center"}><FaUser /> <p className="hidden sm:block md:block">ዴኤታ/ሚኒስተር</p></h1>
+                <h1 className={mode ? "text-white text-[25px] flex gap-4 items-center" : "flex text-[25px] gap-2 items-center"}><FaUser /> <p className="hidden sm:block md:block">ዴኤታ/ሚኒስተር</p></h1>
                 <div className="flex gap-14 items-center">
                     <button onClick={()=>Navigate(-1)} className={mode ? "text-white hover:opacity-40 duration-300 flex items-center" : "hover:opacity-40 duration-300 flex items-center"}><FaHome className="mr-3"/></button>
                     <div className="">

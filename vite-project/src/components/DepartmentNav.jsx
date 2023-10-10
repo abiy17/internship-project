@@ -8,7 +8,7 @@ function DepartmentNav() {
     const {mode,setmode} = useContext(MyContext)
     return (
         <div  className={mode ? "DepartmentNav sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : "DepartmentNav-light p-9 shadow-md text-slate-800  text-2xl bg-white sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
-            <h1 className={mode ? "text-white sm:flex gap-4 items-center" : "sm:flex gap-4 items-center"}><FaBuilding /><p className="hidden sm:block md:block">የስራ ክፍሎች</p></h1>
+            <h1 className={mode ? "text-white sm:flex text-[25px] gap-4 items-center" : "sm:flex gap-4 text-[25px] items-center"}><FaBuilding /><p className="hidden sm:block md:block">የስራ ክፍሎች</p></h1>
             <div className="flex gap-14 items-center">
                 <button onClick={()=>Navigate(-1)} className={mode ? "text-white hover:opacity-40 duration-300 flex items-center" : "hover:opacity-40 duration-300 flex items-center"}><FaHome className="mr-3"/></button>
                 <div className="">

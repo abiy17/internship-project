@@ -16,7 +16,7 @@ function DetailDepartment() {
     return (
         <motion.div className={mode ?"Directions md:h-[1280px] lg:h-[42em]" : "Directions-light md:h-[1280px] lg:h-[42em]"}>
             <div className={mode ? "DepartmentNav sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto" : "DepartmentNav-light sticky flex h-[3em] rounded justify-around gap-24 w-11/12 m-auto"}>
-                <h1 className={mode ? "text-white flex gap-2 font-serif items-center" : "text-slate-800 flex gap-2 items-center font-serif"}><FaBuilding /><p className="hidden sm:block">የስራ ክፍሎች</p></h1>
+                <h1 className={mode ? "text-white flex gap-2 text-[25px] font-serif items-center" : "text-slate-800 text-[25px] flex gap-2 items-center font-serif"}><FaBuilding /><p className="hidden sm:block">የስራ ክፍሎች</p></h1>
                 <button onClick={()=>Navigate(-2)} className={mode ? "text-white hover:opacity-40 duration-300 flex font-serif items-center" : "text-slate-800 hover:opacity-40 duration-300 font-serif flex items-center"}><FaMagento  className="mr-3"/><p className="hidden sm:block">ዋና ገጽ</p></button>
             </div>
             <Rating />
